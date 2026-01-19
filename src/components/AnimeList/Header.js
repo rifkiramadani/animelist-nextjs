@@ -7,12 +7,12 @@ const Header = ({ title, linkHref, linkTitle }) => {
             <div className="flex justify-between items-center p-4">
                 {linkHref && linkTitle ? (
                     <>
-                        <h1 className="text-2xl font-bold">{title}</h1>
-                        <Link href={linkHref} className="md:text-xl text-md underline hover:text-indigo-500 transition-all">{linkTitle}</Link>
+                        <h1 className="text-2xl font-bold text-primary">{title}</h1>
+                        <Link href={linkHref} className="md:text-xl text-md underline hover:text-accent transition-all text-primary">{linkTitle}</Link>
                     </>
                 ) : (
                     <>
-                        <h1 className="text-2xl font-bold">{title}</h1>
+                            <h1 className="text-2xl font-bold text-primary">{title}</h1>
                     </>
                 )}
             </div>
