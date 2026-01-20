@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${gabarito.variable} bg-dark`}
+        className={`${gabarito.className} bg-dark`}
         suppressHydrationWarning={true}
       >
         <Navbar />
