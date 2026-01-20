@@ -15,6 +15,10 @@ const InputSearch = () => {
             e.preventDefault();
             const keyword = searchRef.current.value;
 
+            //cara pertama
+            // if(!keyword) return;
+                
+            //cara kedua
             if(!keyword || keyword === "") {
                 // e.preventDefault();
                 // alert("Data Search Kosong")
