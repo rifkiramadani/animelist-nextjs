@@ -26,6 +26,14 @@ const Pagination = ({ page, lastPage, setPage }) => {
         }
     }
 
+    const handlefirstPage = () => {
+        setPage(1);
+    }
+
+    const handleLastPage = () => {
+        setPage(lastPage);
+    }
+
     // CARA 2
     // const handlePrevPage = () => {
     //     setPage(page - 1);
@@ -39,11 +47,29 @@ const Pagination = ({ page, lastPage, setPage }) => {
         <div>
             <div className="flex justify-center items-center p-4 gap-4 text-primary text-xl">
                 {page == 1 ? (null) : (
-                    <button className="hover:text-accent transition-all" onClick={handlePrevPage}>Prev</button>
+                    <>
+                        <button className=" text-primary p-1 rounded hover:scale-105 transition-all cursor-pointer" onClick={handlefirstPage}>Go to first page</button>
+                        <span>|</span>
+                    </>
                 )}
+
+
+                {page == 1 ? (null) : (
+                    <button className="hover:text-accent transition-all cursor-pointer" onClick={handlePrevPage}>Prev</button>
+                )}
+
                 <span>{page} of {lastPage}</span>
+
                 {page >= lastPage ? (null) : (
-                    <button className="hover:text-accent transition-all" onClick={handleNextPage}>Next</button>
+                    <button className="hover:text-accent transition-all cursor-pointer" onClick={handleNextPage}>Next</button>
+                )}
+
+
+                {page == lastPage ? (null) : (
+                    <>
+                        <span className="cursor-default">|</span>
+                        <button className=" text-primary p-1 rounded hover:scale-105 transition-all cursor-pointer" onClick={handleLastPage}> Go to last page</button>
+                    </>
                 )}
             </div>
         </div>
