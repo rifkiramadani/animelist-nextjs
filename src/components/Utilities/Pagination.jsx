@@ -52,19 +52,13 @@ const Pagination = ({ page, lastPage, setPage }) => {
                         <span>|</span>
                     </>
                 )}
-
-
                 {page == 1 ? (null) : (
                     <button className="hover:text-accent transition-all cursor-pointer" onClick={handlePrevPage}>Prev</button>
                 )}
-
                 <span>{page} of {lastPage}</span>
-
                 {page >= lastPage ? (null) : (
                     <button className="hover:text-accent transition-all cursor-pointer" onClick={handleNextPage}>Next</button>
                 )}
-
-
                 {page == lastPage ? (null) : (
                     <>
                         <span className="cursor-default">|</span>
