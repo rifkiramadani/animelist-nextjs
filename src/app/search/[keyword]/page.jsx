@@ -6,14 +6,16 @@ const Page = async ({ params }) => {
     const resolveParams = await params; //cara menangkap params kedua
     const keyword = resolveParams.keyword;
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/anime?q=${keyword}`)
+    const decodedKeyword = decodeURI(keyword); //untuk menghilangkan spasi %20 pada hasil search
+
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/anime?q=${decodedKeyword}`)
     const searchAnime = await response.json();
 
     return (
         <>
             {/* anime populer */}
             <section>
-                <Header title={`Hasil Pencarian Untuk ${keyword}`} />
+                <Header title={`Hasil Pencarian Untuk ${decodedKeyword}`} />
                 <AnimeList api={searchAnime} />
             </section>
         </>
