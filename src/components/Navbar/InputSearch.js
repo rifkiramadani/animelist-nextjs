@@ -14,7 +14,16 @@ const InputSearch = () => {
         if(e.key === "Enter" || e.type === "click") {
             e.preventDefault();
             const keyword = searchRef.current.value;
-            router.push(`/search/${keyword}`);
+
+            if(!keyword || keyword === "") {
+                // e.preventDefault();
+                // alert("Data Search Kosong")
+                // // router.push(`/`)
+                return;
+            } else {
+                router.push(`/search/${keyword}`);
+            }
+
         }
     }
 
