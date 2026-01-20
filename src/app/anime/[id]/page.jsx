@@ -1,3 +1,4 @@
+import VideoPlayer from "@/components/Utilities/VideoPlayer";
 import { getAnimeReponse } from "@/libs/api-libs";
 import Image from "next/image";
 
@@ -10,12 +11,14 @@ const page = async ({ params }) => {
     const { id } = await params;
     const anime = await getAnimeReponse(`anime/${id}`)
 
+    // console.log(anime.data)
+
     return (
         <>
             <div className="pt-4 px-4 mb-3">
                 <span className="text-primary text-2xl font-semibold">{`${anime.data.title} - ${anime.data.year}`}</span>
             </div>
-            <div className="pt-4 px-4 flex flex-row gap-3 overflow-x-auto">
+            <div className="pt-4 px-4 flex flex-row gap-3 overflow-x-auto pb-2">
                 <div className="w-36 text-primary flex flex-col jusitify-center items-center outline p-2 rounded">
                     <p>PERINGKAT</p>
                     <p>{anime.data.rank}</p>
@@ -45,6 +48,7 @@ const page = async ({ params }) => {
                     {anime.data.synopsis}
                 </span>
             </div>
+            <VideoPlayer youtubeId={anime.data.trailer.embed_url} />
         </>
     )
 }
