@@ -19,7 +19,7 @@ const InputSearch = () => {
             // if(!keyword) return;
                 
             //cara kedua
-            if(!keyword || keyword === "") {
+            if (!keyword || keyword === "" || keyword.trim() == "") {
                 // e.preventDefault();
                 // alert("Data Search Kosong")
                 // // router.push(`/`)

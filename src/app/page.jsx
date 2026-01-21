@@ -16,7 +16,7 @@ const Page = async () => {
   //     .sort(() => Math.random() - 0.5)
   //     .slice(0, 4)
   // }
-  recommendedAnime = reproduce(recommendedAnime, 5);
+  recommendedAnime = reproduce(recommendedAnime, 4);
   return (
     <>
       {/* anime populer */}
