@@ -4,7 +4,7 @@ import Link from "next/link"
 const UserActionButton = async () => {
     const user = await authUserSession();
     const actionLabel = user ? "Sign Out" : "Sign In";
-    const actionURL = user ? "/api/auth/signout" : "/api/auth/signin"
+    const actionURL = user ? "/api/auth/signout" : "/api/auth/signin";
     // const actionDashboard = user ? <Link href={"/user/dashboard"}>Dashboard</Link> : null
 
     return (
