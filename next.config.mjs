@@ -5,6 +5,9 @@ const nextConfig = {
     remotePatterns: [
       {
         hostname: "cdn.myanimelist.net", //hostname for placeholder image
+      },
+      {
+        hostname: "avatars.githubusercontent.com"
       }
     ]
   }

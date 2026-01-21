@@ -48,7 +48,7 @@ const page = async ({ params }) => {
                     {anime.data.synopsis}
                 </span>
             </div>
-            <VideoPlayer youtubeId={anime.data.trailer.embed_url} />
+            <VideoPlayer youtubeId={anime.data.trailer.embed_url ?? ""} />
         </>
     )
 }
