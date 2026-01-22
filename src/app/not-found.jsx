@@ -1,9 +1,15 @@
 "use client"
 
 import { ArrowCircleLeftIcon, FileSearchIcon } from "@phosphor-icons/react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const NotFound = () => {
+
+    const router = useRouter();
+    const handleBack = () => {
+        router.back()
+    }
+
     return (
         <div className="min-h-screen flex justify-center items-center gap-3 flex-col">
             <div className="flex flex-row">
@@ -12,14 +18,14 @@ const NotFound = () => {
                     NOT FOUND
                 </span>
             </div>
-            <Link href={'/'}>
+            <button onClick={handleBack}>
                 <div className="flex flex-row items-center text-primary hover:text-accent transition-all underline">
                     <ArrowCircleLeftIcon size={32} />
                     <span>
-                        Back to Homepage
+                        Back
                     </span>
                 </div>
-            </Link>
+            </button>
         </div>
     )
 }
