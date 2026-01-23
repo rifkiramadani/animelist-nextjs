@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react"
 
-const CommentInput = ({ anime_mal_id, user_email, username, anime_title, anime_rating }) => {
+const CommentInput = ({ anime_mal_id, user_email, username, anime_title, rating }) => {
 
     const [comment, setComment] = useState("");
     const [rating, setRating] = useState("");
