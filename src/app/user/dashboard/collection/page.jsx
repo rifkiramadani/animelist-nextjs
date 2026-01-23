@@ -9,7 +9,6 @@ const page = async () => {
     const user = await authUserSession()
     const collections = await prisma.collection.findMany({ where: { user_email: user.email } })
 
-
     return (
         <section>
             <div>

@@ -1,5 +1,7 @@
 import CollectionButton from "@/components/AnimeList/CollectionButton";
+import CommentInput from "@/components/AnimeList/CommentInput";
 import VideoPlayer from "@/components/Utilities/VideoPlayer";
+import CommentList from "@/components/AnimeList/CommentList";
 import { getAnimeReponse } from "@/libs/api-libs";
 import { authUserSession } from "@/libs/auth-libs";
 import prisma from "@/libs/prisma";
@@ -25,6 +27,8 @@ const page = async ({ params }) => {
             // anime_title: anime?.data.title
         }
     })
+
+
 
     // console.log(anime.data.images.jpg.image_url)
     // console.log(collection);
@@ -67,7 +71,15 @@ const page = async ({ params }) => {
                     {anime.data.synopsis}
                 </span>
             </div>
-            <VideoPlayer youtubeId={anime.data.trailer.embed_url ?? ""} />
+            <div className="p-4">
+                <CommentList anime_id={id} />
+            </div>
+            <div className="px-4 py-2 flex flex-col">
+                {user && (<CommentInput anime_mal_id={id} user_email={user?.email} username={user?.name} anime_title={anime.data.title} />)}
+            </div>
+            <div>
+                <VideoPlayer youtubeId={anime.data.trailer.embed_url ?? ""} />
+            </div>
         </>
     )
 }
